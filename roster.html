@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Roster - Gate LMS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Gray Minimal Laptop Mockup Website Launch Free Instagram Post (1) (1).png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 40px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      z-index: -1;
+      backdrop-filter: blur(3px);
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      font-size: 28px;
+      color: #007bff;
+      background-color: white;
+      border-radius: 50%;
+      padding: 5px 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .course-title {
+      text-align: center;
+      margin: 30px 20px 10px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .student-list {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .student-list h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    .student-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .student-list li {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+    }
+
+    .student-list li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <header>Gate LMS - Roster</header>
+  <a class="back-arrow" href="courses.html">←</a>
+
+  <div class="course-title" id="courseTitle">المادة: </div>
+
+  <div class="student-list">
+    <h3>الطلاب المسجلين:</h3>
+    <ul>
+      <li>محمد عبدالعزيز القحطاني</li>
+      <li>سعود ناصر العتيبي</li>
+      <li>عبدالله راشد الدوسري</li>
+      <li>أحمد خالد الزهراني</li>
+      <li>سلمان فهد الشمري</li>
+      <li>فيصل علي الحربي</li>
+      <li>نايف عبدالله المطيري</li>
+      <li>خالد محمد السبيعي</li>
+      <li>ابراهيم سليمان المعيوف</li>
+      <li>عبدالرحمن فهد العجمي</li>
+    </ul>
+  </div>
+
+  <script>
+    // استخراج اسم المادة من الرابط
+    const params = new URLSearchParams(window.location.search);
+    const course = params.get("course");
+    const courseTitleElement = document.getElementById("courseTitle");
+
+    if (course) {
+      courseTitleElement.textContent = "المادة: " + course;
+    } else {
+      courseTitleElement.textContent = "المادة: غير معروفة";
+    }
+  </script>
+</body>
+</html>
